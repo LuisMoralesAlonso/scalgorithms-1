@@ -16,3 +16,17 @@ It implements a classic algorithm known as binary search and tests it for an app
 
 http://en.wikipedia.org/wiki/Binary_search_algorithm
 
+**BinDistribution.scala.**
+I'll do a function to obtain recursively the binomial coeffcients. It's in the Coursera course too.
+
+http://en.wikipedia.org/wiki/Binomial_distribution
+
+The first lines of Pascal's triangle:
+
+http://commons.wikimedia.org/wiki/File:Pascals_triangle_30_lines.png
+
+**Sattolo's algorithm.** 
+Generates a unifomly distributed cycle of length N using Sattolo's algorithm.
+
+http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Sattolo.27s_algorithm
+
