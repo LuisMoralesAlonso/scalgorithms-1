@@ -6,9 +6,9 @@ Just for practicing porposes with Scala I'll try to rewrite all exercises from A
 Main principles I'll try to follow:
 * No side effects methods. No "traditional" loop.
 * Functions always return something, and as first-class citizen they may be higher-order ones.
-* Inmutability everywhere.
+* Inmutability everywhere. 
+* Functional objects. 
 
-## Algorithms, Part I
 ###Week0.
 **BinarySearch.scala.**
 
@@ -19,11 +19,24 @@ http://en.wikipedia.org/wiki/Binary_search_algorithm
 **BinDistribution.scala.**
 I'll do a function to obtain recursively the binomial coeffcients. It's in the Coursera course too.
 
+I've supposed first element is (1,1).
+
 http://en.wikipedia.org/wiki/Binomial_distribution
 
 The first lines of Pascal's triangle:
 
 http://commons.wikimedia.org/wiki/File:Pascals_triangle_30_lines.png
+
+**Matrix library.** 
+
+Write a library Matrix that implements the following API:
+
+public class Matrix
+static double		dot(double[] x, double[] y)			vector dot product
+static double[][]	mult(double[][] a, double[][] b)	matrix-matrix product
+static double[][]	transpose(double[][] a)				transpose
+static double[]		mult(double[][] a, double[] x)		matrix-vector product
+static double[]		mult(double[] y, double[][] a)		vector-matrix product
 
 **Sattolo's algorithm.** 
 Generates a unifomly distributed cycle of length N using Sattolo's algorithm.
