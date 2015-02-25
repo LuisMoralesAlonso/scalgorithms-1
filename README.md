@@ -29,14 +29,9 @@ http://commons.wikimedia.org/wiki/File:Pascals_triangle_30_lines.png
 
 **Matrix library.** 
 
-Write a library Matrix that implements the following API:
+I've used scala files from:
 
-public class Matrix
-static double		dot(double[] x, double[] y)			vector dot product
-static double[][]	mult(double[][] a, double[][] b)	matrix-matrix product
-static double[][]	transpose(double[][] a)				transpose
-static double[]		mult(double[][] a, double[] x)		matrix-vector product
-static double[]		mult(double[] y, double[][] a)		vector-matrix product
+https://github.com/eobrain/scalaclass
 
 **Sattolo's algorithm.** 
 Generates a unifomly distributed cycle of length N using Sattolo's algorithm.
