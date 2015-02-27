@@ -42,10 +42,6 @@ Algorithm P.
 
 http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modern_method
 
-Inside-Out Algorithm.
-
-http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modern_method
-
 Sattolo's.
 
 Generates a unifomly distributed cycle of length N using Sattolo's algorithm.
