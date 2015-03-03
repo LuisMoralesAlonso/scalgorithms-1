@@ -48,3 +48,5 @@ Generates a unifomly distributed cycle of length N using Sattolo's algorithm.
 
 http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Sattolo.27s_algorithm
 
+**3SUM**
+ Get all combinations of three numbers (a,b,c) from a given list such that a+b+c=0.
