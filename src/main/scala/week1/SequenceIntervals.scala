@@ -3,22 +3,22 @@ package week1
 /**
  * @author luis
  */
-object SequenceIntervals {
-  trait SeqIntervals[T] {
-    def find(seq: Seq[T], index: Int): T
-    def connected(a: Int, b: Int, seq: Seq[T]): Boolean
-    def count(seq: Seq[T]): Int
+  abstract class SeqIntervals[T](seq: Seq[T]) {
+    def find(index: Int): T    
+    def connected(p: Int, q: Int): Boolean = find(p)==find(q)
+    def union(p: Int, q: Int): SeqIntervals[T]    
+    def count: Int = seq.distinct.size 
+    override def toString = seq.toString()
   }
 
-  implicit object SeqIntervalsInt extends SeqIntervals[Int] {
-    def find(seq: Seq[Int], p: Int): Int = seq(p)
-    def connected(p: Int, q: Int, seq: Seq[Int]): Boolean = find(seq, p) == find(seq, q)
-    def count(seq: Seq[Int]): Int = seq.distinct.size
+  class QuickFind[T](seq: Seq[T]) extends SeqIntervals[T](seq: Seq[T]) {
+    def find(p: Int): T = seq(p)
+    def union(p: Int, q: Int): SeqIntervals[T] = 
+      if (connected(p, q)) this else new QuickFind(seq map (r => if (r == find(p)) find(q) else r))
   }
   
-  implicit object SeqIntervalsDouble extends SeqIntervals[Double] {
-    def find(seq: Seq[Double], p: Int): Double = seq(p)
-    def connected(p: Int, q: Int, seq: Seq[Double]): Boolean = find(seq, p) == find(seq, q)
-    def count(seq: Seq[Double]): Int = seq.distinct.size
+  class QuickUnion[T](seq: Seq[T]) extends SeqIntervals[T](seq: Seq[T]) {
+    def find(p: Int): T = seq(p)
+    def union(p: Int, q: Int): SeqIntervals[T] = 
+      if (connected(p, q)) this else new QuickFind(seq map (r => if (r == find(p)) find(q) else r))
   }
-}
