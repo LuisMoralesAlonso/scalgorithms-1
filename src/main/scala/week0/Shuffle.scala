@@ -5,11 +5,9 @@ import scala.util._
  * @author luis
  */
 object Shuffle {
-  implicit class Shuffle(lista: List[Int])(implicit t: String) {
-    def shuffle(lista: List[Int], t: String): List[Int] = t match {
-      case "palgorithm" => palgorithm(lista)
-      case "sattolo"    => sattolo(lista)
-    }
+  def shuffle(lista: List[Int], t: String): List[Int] = t match {
+    case "palgorithm" => palgorithm(lista)
+    case "sattolo"    => sattolo(lista)
   }
 
   def palgorithm(lista: List[Int]): List[Int] = lista match {
