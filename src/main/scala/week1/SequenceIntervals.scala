@@ -23,5 +23,5 @@ class QuickUnion(seq: Seq[Int]) extends SeqIntervals(seq: Seq[Int]) {
     case index => find(seq(index))
   }
   def union(p: Int, q: Int): SeqIntervals =
-    if (connected(p, q)) this else new QuickUnion(seq updated (p,seq(q)))
+    if (connected(p, q)) this else new QuickUnion(seq updated (find(p),find(q)))
 }
