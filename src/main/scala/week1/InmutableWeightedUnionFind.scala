@@ -34,7 +34,7 @@ object InmutableWeightedUnionFind {
     def weightedUnion(p: Int, q: Int): Components = if (connected(p, q)) comp else (comp.indices map {
       case index if index == siteRoot(p) => if (comp compareRoots(p,q)) (siteRoot(q), (find(p).size)) else (siteRoot(p), find(p).sumSizes(find(q)))
       case index if index == siteRoot(q) => if (comp compareRoots(p,q)) (siteRoot(q), find(p).sumSizes(find(q))) else (siteRoot(p), (find(q).size))
-      case index               => comp(index)
+      case index               => (comp(comp(index).index).index,comp(index).size)
     }).toList
   }
 }
