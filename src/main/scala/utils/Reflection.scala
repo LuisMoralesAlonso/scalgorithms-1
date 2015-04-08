@@ -1,8 +1,10 @@
 package utils
+
 import scala.reflect.runtime.universe._
 /**
  * @author luis
  */
+
 object Reflection {
   class Foo
   class Bar extends Foo

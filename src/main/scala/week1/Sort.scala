@@ -7,12 +7,12 @@ package week1
 import scala.reflect._
 
 object Sort {
-  def selectionSort[A <% Ordered[A]](lista: Array[A])(implicit ctag: ClassTag[A]): Array[A] = {
-    def stepOrder(acc: Array[A], lista: Array[A]): Array[A] = lista match {
-      case lista if lista.isEmpty => acc
-      case _                      => lista.min +: stepOrder(acc, lista.diff(Array(lista.min)))
+  def selectionSort[A <% Ordered[A]](xs: Array[A])(implicit ctag: ClassTag[A]): Array[A] = {
+    def stepOrder(acc: Array[A], xs: Array[A]): Array[A] = xs match {
+      case xs if xs.isEmpty => acc
+      case _                => xs.min +: stepOrder(acc, xs.diff(Array(xs.min)))
     }
-    stepOrder(Array(), lista)
+    stepOrder(Array(), xs)
   }
 
   def quickSort[A <% Ordered[A]](xs: Array[A])(implicit ctag: ClassTag[A]): Array[A] = {
@@ -31,5 +31,5 @@ object Sort {
       case (lower, upper) => lower ::: value :: upper
     }
     xs.foldLeft(List.empty[A])(insert)
-  }                             
+  }
 }
